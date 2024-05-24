@@ -5,10 +5,12 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@types/node@npm:^20.1.5":
-  version: 20.1.5
-  resolution: "@types/node@npm:20.1.5"
-  checksum: 0d073ed7b9cc51e2354dcf3a8ccca84d08c7d513fa8fac9462cabc164435b30f2ad296e9f2f911e6ce72da837b704f1075379be84a93bb24f76d328a2d9e8561
+"@types/node@npm:^20.12.12":
+  version: 20.12.12
+  resolution: "@types/node@npm:20.12.12"
+  dependencies:
+    undici-types: ~5.26.4
+  checksum: 5373983874b9af7c216e7ca5d26b32a8d9829c703a69f1e66f2113598b5be8582c0e009ca97369f1ec9a6282b3f92812208d06eb1e9fc3bd9b939b022303d042
   languageName: node
   linkType: hard
 
@@ -19,13 +21,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.27.0":
-  version: 0.27.2
-  resolution: "axios@npm:0.27.2"
+"axios@npm:^1.7.2":
+  version: 1.7.2
+  resolution: "axios@npm:1.7.2"
   dependencies:
-    follow-redirects: ^1.14.9
+    follow-redirects: ^1.15.6
     form-data: ^4.0.0
-  checksum: 38cb7540465fe8c4102850c4368053c21683af85c5fdf0ea619f9628abbcb59415d1e22ebc8a6390d2bbc9b58a9806c874f139767389c862ec9b772235f06854
+    proxy-from-env: ^1.1.0
+  checksum: e457e2b0ab748504621f6fa6609074ac08c824bf0881592209dfa15098ece7e88495300e02cd22ba50b3468fd712fe687e629dcb03d6a3f6a51989727405aedf
   languageName: node
   linkType: hard
 
@@ -45,13 +48,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.9":
-  version: 1.15.2
-  resolution: "follow-redirects@npm:1.15.2"
+"follow-redirects@npm:^1.15.6":
+  version: 1.15.6
+  resolution: "follow-redirects@npm:1.15.6"
   peerDependenciesMeta:
     debug:
       optional: true
-  checksum: faa66059b66358ba65c234c2f2a37fcec029dc22775f35d9ad6abac56003268baf41e55f9ee645957b32c7d9f62baf1f0b906e68267276f54ec4b4c597c2b190
+  checksum: a62c378dfc8c00f60b9c80cab158ba54e99ba0239a5dd7c81245e5a5b39d10f0c35e249c3379eae719ff0285fff88c365dd446fab19dee771f1d76252df1bbf5
   languageName: node
   linkType: hard
 
@@ -89,6 +92,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"proxy-from-env@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "proxy-from-env@npm:1.1.0"
+  checksum: ed7fcc2ba0a33404958e34d95d18638249a68c430e30fcb6c478497d72739ba64ce9810a24f53a7d921d0c065e5b78e3822759800698167256b04659366ca4d4
+  languageName: node
+  linkType: hard
+
 "symbol.inspect@npm:1.0.1":
   version: 1.0.1
   resolution: "symbol.inspect@npm:1.0.1"
@@ -96,14 +106,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ton-core@npm:^0.49.1":
-  version: 0.49.1
-  resolution: "ton-core@npm:0.49.1"
+"ton-core@npm:^0.53.0":
+  version: 0.53.0
+  resolution: "ton-core@npm:0.53.0"
   dependencies:
     symbol.inspect: 1.0.1
   peerDependencies:
     ton-crypto: ">=3.2.0"
-  checksum: 88e0f73411cf46f45ea61cc780c347ad2d7d903b22a3f07f8615e8b0d1fa52749329208567ac18afe68d89d7a48abedca46958d679bab87527d3209585703f2d
+  checksum: a0f6bc3034fda8521e1c628c1bedd5869166be29e4a1267268dd99e885ba25d5d7b67c88970b23bbb332d936ff1fe0d82f776ddb24649f938c047173b81a8629
   languageName: node
   linkType: hard
 
@@ -131,14 +141,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ton-x@workspace:."
   dependencies:
-    "@types/node": ^20.1.5
-    axios: ^0.27.0
-    ton-core: ^0.49.1
+    "@types/node": ^20.12.12
+    axios: ^1.7.2
+    ton-core: ^0.53.0
     ton-crypto: ^3.2.0
-    typescript: ^4.6.3
+    typescript: ^5.4.5
   peerDependencies:
-    ton-core: ^0.47.0
-    ton-crypto: "*"
+    ton-core: ">=0.47.0"
+    ton-crypto: ">=3.2.0"
   languageName: unknown
   linkType: soft
 
@@ -149,22 +159,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.6.3":
-  version: 4.9.4
-  resolution: "typescript@npm:4.9.4"
+"typescript@npm:^5.4.5":
+  version: 5.4.5
+  resolution: "typescript@npm:5.4.5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: e782fb9e0031cb258a80000f6c13530288c6d63f1177ed43f770533fdc15740d271554cdae86701c1dd2c83b082cea808b07e97fd68b38a172a83dbf9e0d0ef9
+  checksum: 53c879c6fa1e3bcb194b274d4501ba1985894b2c2692fa079db03c5a5a7140587a1e04e1ba03184605d35f439b40192d9e138eb3279ca8eee313c081c8bcd9b0
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.6.3#~builtin<compat/typescript>":
-  version: 4.9.4
-  resolution: "typescript@patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=289587"
+"typescript@patch:typescript@^5.4.5#~builtin<compat/typescript>":
+  version: 5.4.5
+  resolution: "typescript@patch:typescript@npm%3A5.4.5#~builtin<compat/typescript>::version=5.4.5&hash=77c9e2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 2160f7ad975c59b2f5816817d3916be1d156c5688a7517602b3b640c5015e740f4ba933996ac85371d68f7bbdd41602150fb8b68334122ac637fdb5418085e7a
+  checksum: 2373c693f3b328f3b2387c3efafe6d257b057a142f9a79291854b14ff4d5367d3d730810aee981726b677ae0fd8329b23309da3b6aaab8263dbdccf1da07a3ba
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~5.26.4":
+  version: 5.26.5
+  resolution: "undici-types@npm:5.26.5"
+  checksum: 3192ef6f3fd5df652f2dc1cd782b49d6ff14dc98e5dced492aa8a8c65425227da5da6aafe22523c67f035a272c599bb89cfe803c1db6311e44bed3042fc25487
   languageName: node
   linkType: hard
